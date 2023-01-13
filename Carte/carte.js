@@ -2,6 +2,9 @@
 // ensemble du code pour la creation de la carte openstreetmap
 // utilisation du framework Leaflet
 
+var hostname ="127.0.0.1";
+
+
 // fonction js utilisees dans ce programme
 function hideloader(){
   document.getElementById('loading').style.display = 'none';
@@ -153,7 +156,7 @@ function tracer_ligne(data1, data2, weight){
     
   polyline.setStyle({
     color: 'green', weight: poids
-  }).bindPopup("Trajet de " + data1[0].nom + " à " + data2[0].nom + "<br />Nombre de personnes : " + poids);
+  }).bindPopup("Trajet de " + data1[0].nom + " Ã  " + data2[0].nom + "<br />Nombre de personnes : " + poids);
   polyline.addTo(macarte);
   
 }
@@ -171,7 +174,7 @@ var macarte= null;
 //initialisation de la carte
 macarte = L.map('map').setView([lat, lon], 9);
 osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: 'données <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+                    attribution: 'donnÃ©es <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
                     minZoom: 5,
                     maxZoom: 20
 });
@@ -188,11 +191,11 @@ L.control.scale().addTo(macarte);
 
 // ajout des lieux de travail : universite represente par des marqueurs bleus
 // url de l api FAST API
-const url_travail = "http://127.0.0.1:8000/data_mobilite/label_colonne/INSEE_TRA";
+const url_travail = "http://"+hostname+":8000/data_mobilite/label_colonne/INSEE_TRA";
 
-// domicile des individus représenté par des zones rouges
+// domicile des individus reprï¿½sentï¿½ par des zones rouges
 // url de l api FAST API
-const url_domicile = "http://127.0.0.1:8000/data_mobilite/label_colonne/INSEE_DOM";
+const url_domicile = "http://"+hostname+":8000/data_mobilite/label_colonne/INSEE_DOM";
 
 // appel fonctions
 // ajout des domiciles
@@ -204,23 +207,5 @@ get_lieux(url_travail, "travail");
 // creation des traits
 
 // ajouter les flux de deplacement
-const url_flux_dep = "http://127.0.0.1:8000/data_mobilite/geo/flux/person";
+const url_flux_dep = "http://"+hostname+":8000/data_mobilite/geo/flux/person";
 get_flux(url_flux_dep);
-
-
-var points = [
-    [50.608194102437594, 3.145977484716809],
-    [50.531036, 2.63926]
-];
-
-
-var poids = 5;
-
-var polyline = L.polyline(points);
-var poly = L.polyline([[ 50.6278677, 3.1247218], [50.72459030151367, 3.16391921043396]]);
-polyline.setStyle({color: 'red', weight: 10});
-poly.setStyle({color:'red', weight:10});
-
-var trajets  = L.layerGroup([polyline]);
-trajets = L.layerGroup([poly]);
-layerControl.addOverlay(trajets, "Trajets domicile travail");
