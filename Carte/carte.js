@@ -193,7 +193,7 @@ L.control.scale().addTo(macarte);
 // url de l api FAST API
 const url_travail = "http://"+hostname+":8000/data_mobilite/label_colonne/INSEE_TRA";
 
-// domicile des individus repr�sent� par des zones rouges
+// domicile des individus represente par des zones rouges
 // url de l api FAST API
 const url_domicile = "http://"+hostname+":8000/data_mobilite/label_colonne/INSEE_DOM";
 
