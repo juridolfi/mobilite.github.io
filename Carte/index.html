@@ -113,6 +113,10 @@
     </div>
 
     <!--Corqs de la page-->
+    <!-- Mettre après Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+    <script type="text/javascript" src="carte.js"></script>
+    
     <main class="container">
       <div class="row g-5">
         <div class="col-md-8">
@@ -124,14 +128,9 @@
               <div id="map"></div>
             </div>
 
-            <!-- Mettre après Leaflet's CSS -->
-            <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
-            <script type="text/javascript" src="carte.js"></script>
-
-
             <div class="d-flex justify-content-center">
               <div class="spinner-border" role="status" id="loading">
-                <span class="sr-only">Loading...</span>
+                <span>Loading...</span>
               </div>
             </div>
 
