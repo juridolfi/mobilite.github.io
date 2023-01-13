@@ -1,50 +1,135 @@
 <!DOCTYPE HTML>
 <html>
+
   <head>
     <meta charset="ISO 8859-1">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
-     crossorigin=""/>
-     <title>Carte</title>
-     <!-- La carte doit avoir une hauteur sinon elle ne peut pas apparaitre-->
-     
-     <!-- Recuperation de la librairie d3 -->
-     <script src="https://d3js.org/d3.v4.min.js"></script>
-     <!-- chargement de la fonction sankey-->
-     <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/sankey.js"></script>
-     <!-- Plotly -->
-     <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
-     
-     <!-- code CSS utilise -->
-     <style type="text/css">
-            #map{
-              height:500px;
-              width:800px;
-            }       
-      </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    <title>Carte</title>
+    <!-- La carte doit avoir une hauteur sinon elle ne peut pas apparaitre-->
+
+    <!-- Recuperation de la librairie d3 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- chargement de la fonction sankey-->
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/sankey.js"></script>
+    <!-- Plotly -->
+    <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+    <link href="https://juridolfi.github.io/mobilite.github.io/Client/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- CSS du template -->
+    <link href="blog.css" rel="stylesheet">
+
+
+    <!-- code CSS utilise -->
+    <style type="text/css">
+      #map {
+        height: 500px;
+        width: 800px;
+      }
+    </style>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
   </head>
-  
+
   <body>
-    
+
+    <!--Bandeau d accueil-->
+    <div class="container">
+      <header class="blog-header lh-1 py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div>
+            <img src="https://juridolfi.github.io/mobilite.github.io/Client/polytech.png" alt="LogoPolytech" width=30% height=30% />
+            <img src="https://juridolfi.github.io/mobilite.github.io/Client/univ.jpg" alt="LogoUniv" width=30% height=30% style="float:right;" />
+            <h1>Projet ingénieur</h1>
+            <h2> Visualisation des données
+              issues de l'enquête mobilité de l'Université de Lille</h2>
+          </div>
+        </div>
+      </header>
+
+      <!--Liens vers les graphiques-->
+      <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+          <a class="p-2 link-secondary" href="https://juridolfi.github.io/mobilite.github.io/Client/index.html">Accueil</a>
+          <a class="p-2 link-secondary" href="https://juridolfi.github.io/mobilite.github.io/Graphe_chartjs/index.html">Graphiques en barre</a>
+          <a class="p-2 link-secondary" href="https://juridolfi.github.io/mobilite.github.io/Carte/index.html">Carte</a>
+          <a class="p-2 link-secondary" href="https://juridolfi.github.io/mobilite.github.io/Carte/index_sankey.html">Sankey</a>
+          <a class="p-2 link-secondary" href="https://juridolfi.github.io/mobilite.github.io/Tableau/index.html">Tableau</a>
+        </nav>
+      </div>
+    </div>
+
     <div>
       <!-- Insertion map-->
       <h1>Carte</h1>
       <div id="map"></div>
     </div>
-    
+
     <!-- Mettre après Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
-     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
-     crossorigin=""></script>
-     <script type="text/javascript" src="carte.js"></script>
-     
-     
-     <div class="d-flex justify-content-center">
-        <div class="spinner-border" role="status" id="loading">
-          <span class="sr-only">Loading...</span>
-        </div>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+    <script type="text/javascript" src="carte.js"></script>
+
+
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status" id="loading">
+        <span class="sr-only">Loading...</span>
+      </div>
     </div>
-    
+
   </body>
-  
+
 </html>
