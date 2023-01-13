@@ -11,7 +11,7 @@ Cette archive contient plusieurs répertoires:
 
 - Le répertoire **Carte** permet de faire l'affichage des flux de déplacement des personnels et étudiants de l'Université. Nous retrouvons dans ce répertoire un fichier index.html qui affiche une carte OpenStreetMap à l'aide de la librairy Leaflet. Le fichier index_sankey.html permet quand à lui d'afficher un graphique de Sankey des flux de déplacement;
 - Le répertoire **Client** est composé de fichier html et css qui permettent l'affichage du site. Par exemple, le fichier index.html contient la page d'accueil du site;
-- Le répertoire **Graphe_chartjs" permet de faire l'affichage de diagramme en barre et de pie;
+- Le répertoire **Graphe_chartjs** permet de faire l'affichage de diagramme en barre et de pie;
 - Le répertoire **Tableau** contient les fichiers js et html nécessaire à l'affichage d'un tableau de la quantité des GES annuel en fonction du mode de transport et de la distance parcourue (tranche de distance) pour une personne seule;
 - Le répertoire **API** contient API REST utilisé.
 
