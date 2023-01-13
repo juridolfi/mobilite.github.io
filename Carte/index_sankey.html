@@ -10,7 +10,6 @@
     <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/sankey.js"></script>
     <!-- Plotly -->
     <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
-    <!-- ajout CSS-->
 
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
@@ -28,11 +27,6 @@
         fill: none;
         stroke: #000;
         stroke-opacity: .2;
-      }
-
-      .link hover {
-        stroke-opacity: 1;
-
       }
 
       .bd-placeholder-img {
@@ -118,11 +112,28 @@
     </div>
 
     <!-- insertion d un sankey diagram avec d3-->
-    <div>
-      <h1>Exemple de diagramme avec Plotly</h1>
-      <div id="my_dataviz"></div>
-      <script type="text/javascript" src="sankey.js"></script>
-    </div>
+    <main class="container">
+      <div class="row g-5">
+        <div class="col-md-8">
+
+          <article class="blog-post">
+            <div>
+              <h1>Exemple de diagramme avec Plotly</h1>
+              <div id="my_dataviz"></div>
+              <script type="text/javascript" src="sankey.js"></script>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    </footer>
 
   </body>
 

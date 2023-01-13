@@ -25,12 +25,6 @@
 
 
     <!-- code CSS utilise -->
-    <style type="text/css">
-      #map {
-        height: 500px;
-        width: 800px;
-      }
-    </style>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -82,6 +76,11 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
+      .map {
+        height: 500px;
+        width: 800px;
+      }
     </style>
   </head>
 
@@ -113,22 +112,40 @@
       </div>
     </div>
 
-    <div>
-      <!-- Insertion map-->
-      <h1>Carte</h1>
-      <div id="map"></div>
-    </div>
+    <!--Corqs de la page-->
+    <main class="container">
+      <div class="row g-5">
+        <div class="col-md-8">
 
-    <!-- Mettre après Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
-    <script type="text/javascript" src="carte.js"></script>
+          <article class="blog-post">
+            <div>
+              <!-- Insertion map-->
+              <h1>Carte</h1>
+              <div id="map"></div>
+            </div>
+
+            <!-- Mettre après Leaflet's CSS -->
+            <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+            <script type="text/javascript" src="carte.js"></script>
 
 
-    <div class="d-flex justify-content-center">
-      <div class="spinner-border" role="status" id="loading">
-        <span class="sr-only">Loading...</span>
+            <div class="d-flex justify-content-center">
+              <div class="spinner-border" role="status" id="loading">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+
+          </article>
+
+        </div>
+
       </div>
-    </div>
+
+    </main>
+
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    </footer>
 
   </body>
 

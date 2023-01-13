@@ -1,5 +1,6 @@
 // sankey.js
-d3.json('http://127.0.0.1:8000/data_mobilite/geo/flux/sankey', function(fig){
+var hostname = "127.0.0.1"
+d3.json('http://'+hostname+':8000/data_mobilite/geo/flux/sankey', function(fig){
 
 const source = fig.links.map(
   function(index){
@@ -93,7 +94,7 @@ var data = [data]
 
 // configuration du graphe
 var layout = {
-  title: "Les flux de déplacement du personnels et des étudiants de l'Université de Lille",
+  title: "Les flux de dÃ©placement du personnels et des Ã©tudiants de l'UniversitÃ© de Lille",
   width: 1118,
   height: 772,
   font: {
