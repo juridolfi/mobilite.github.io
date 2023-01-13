@@ -1,0 +1,1 @@
+Etudiante à Polytech Lille en cinquième année en Informatique et Statistique, je suis amenée à réaliser un projet nommé "Projet ingénieur". A l'aide de mon binôme, nous avons travaille sur les données issues de l'enquête mobilité
