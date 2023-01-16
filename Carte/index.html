@@ -54,13 +54,15 @@
     <div align="center">
       <!-- Insertion map-->
       <h1>Carte</h1>
+      <div align ="right">
+        <button id="flux" onclick="get_flux('http://127.0.0.1:8000/data_mobilite/geo/flux/person');">Flux de déplacement</button>
+      </div>
       <div id="map"></div>
     </div>
 
     <!-- Mettre apres Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
     <script type="text/javascript" src="carte.js"></script>
-
 
     <div class="d-flex justify-content-center">
       <div role="status" id="loading">
